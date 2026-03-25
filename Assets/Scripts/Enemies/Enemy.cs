@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public bool isActive = true; //Define si el personaje puede interactuar con el mundo y el jugador
+    public bool isActive = false; //Define si el personaje puede interactuar con el mundo y el jugador
     
     public float totalLife = 15; //Vida todal del personaje
     public float currentLife; //Vida actual del personaje
@@ -261,4 +261,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    void OnBecameVisible() {
+        isActive = true;
+    }
 }
