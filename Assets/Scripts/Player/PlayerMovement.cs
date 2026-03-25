@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public int life = 5;//Vida del personaje
+    private int maxLife;
+
     public float speed = 10f; //Velocidad del jugador al moverse
     public float jumpForce = 12f; //Fuerza con la que salta
 
@@ -28,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     private float knockbackTimer = 0.8f;//Tiempo que dura el knockback
     private float knockbackTimerCounter;
 
+    private UIController uIController;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         arm = transform.Find("ArmR").gameObject.GetComponent<ArmAim>();
         srLeftArm = transform.Find("ArmL").gameObject.GetComponent<SpriteRenderer>();
+        uIController = GameObject.Find("Canvas").GetComponent<UIController>();
     }
 
     // Update is called once per frame
@@ -132,6 +138,15 @@ public class PlayerMovement : MonoBehaviour
         isKnockback = true;
         rb.linearVelocity = new Vector2(0f, 0f);
         rb.AddForce(knockback, ForceMode2D.Impulse);
-        knockbackTimerCounter = knockbackTimer;
+        knockbackTimerCounter = knockbackTimer;      
+    }
+
+    public void TakeDamage(int damage, Vector2 knockback)
+    {
+        int newLife = life - damage;
+        if(newLife < 0) newLife = 0;
+        life = newLife;
+        uIController.SetLife(newLife);
+        AddKnockBack(knockback);
     }
 }
