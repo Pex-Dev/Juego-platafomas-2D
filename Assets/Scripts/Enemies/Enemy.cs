@@ -247,7 +247,7 @@ public class Enemy : MonoBehaviour
 
             Vector2 knockback = new Vector2(dir * 3f, 3f);
 
-            other.GetComponent<PlayerMovement>().AddKnockBack(knockback * 2);
+            other.GetComponent<PlayerMovement>().TakeDamage(1, knockback * 2);
         }
     }
 
