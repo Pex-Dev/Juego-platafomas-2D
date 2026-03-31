@@ -79,6 +79,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2425817924711789501}
   - component: {fileID: 5569476028382384758}
+  - component: {fileID: -5982078528547928745}
   - component: {fileID: 8139993268203810887}
   - component: {fileID: 7101581624807986777}
   - component: {fileID: 7072227349149422726}
@@ -125,11 +126,26 @@ MonoBehaviour:
   jumpForce: 15
   jumpDelayCounter: 0
   target: {fileID: 0}
+  dieAnimation: {fileID: -5982078528547928745}
   isGrounded: 0
   groundRadius: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &-5982078528547928745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889604867464320298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06fe642cc258784fa4c3afaf31c1e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DieAnimation
+  gorePart: {fileID: 3642849689600389402, guid: ba4346908aea991408e5ea7908e3fa56, type: 3}
+  bloodSprite: {fileID: 21300000, guid: b726d9bc7c95ffb409287285b4493fe0, type: 3}
 --- !u!212 &8139993268203810887
 SpriteRenderer:
   serializedVersion: 2
