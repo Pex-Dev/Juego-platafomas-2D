@@ -33,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
 
     private UIController uIController;
 
+    [SerializeField] private DieAnimation dieAnimation; //Script de animación de muerte
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -148,5 +150,11 @@ public class PlayerMovement : MonoBehaviour
         life = newLife;
         uIController.SetLife(newLife);
         AddKnockBack(knockback);
+        if(life <= 0){
+            dieAnimation.StartAnimation();
+            Destroy(gameObject);
+            uIController.SetLife(0);
+            uIController.ShowDeathScreen(true);
+        }
     }
 }
