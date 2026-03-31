@@ -1,6 +1,4 @@
 using System;
-using NUnit.Framework;
-using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
