@@ -13,11 +13,19 @@ public class LifeContainer : MonoBehaviour
         int updatedLife = life;
         if(updatedLife < 0) updatedLife = 0;
         if(updatedLife > maxLife) updatedLife = maxLife;
-
+        
         for(int i = 0; i < maxLife; i++)
         {            
             if(i > updatedLife)
             {
+                hearts[i].enabled = false;
+            }
+        }
+
+        if(updatedLife == 0)
+        {
+            for(int i = 0; i < maxLife; i++)
+            {            
                 hearts[i].enabled = false;
             }
         }
