@@ -21,6 +21,9 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private GameObject target; //Objetivo del personaje 
 
+
+    [SerializeField] private DieAnimation dieAnimation; //Script de animación de muerte
+
     private BoxCollider2D bc; //Componente boxcollider2d del personaje
     private SpriteRenderer sr; //Componente SpriteRenderer del personaje
     private Rigidbody2D rb; //Componente rigidBody2D del personaje
@@ -256,7 +259,8 @@ public class Enemy : MonoBehaviour
     {
         currentLife -= damage;
         if(currentLife <= 0)
-        {
+        {   
+            dieAnimation.StartAnimation();
             Destroy(gameObject);
         }
     }
