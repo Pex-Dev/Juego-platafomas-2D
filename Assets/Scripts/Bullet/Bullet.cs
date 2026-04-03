@@ -2,27 +2,23 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject magicExplosion;
     void Start()
     {
         Destroy(gameObject,2f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Ground"))
         {
+            if(magicExplosion != null)Instantiate(magicExplosion, transform.position, transform.rotation);
             Destroy(gameObject);
         }
         if(other.CompareTag("Enemy"))
         {
             other.GetComponent<Enemy>()?.TakeDamage(5); 
+            if(magicExplosion != null)Instantiate(magicExplosion, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
