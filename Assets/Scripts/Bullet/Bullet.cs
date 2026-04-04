@@ -3,8 +3,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject magicExplosion;
+    private Rigidbody2D rb;
     void Start()
-    {
+    {   
+        rb = gameObject.GetComponent<Rigidbody2D>();
         Destroy(gameObject,2f);
     }
 
@@ -16,8 +18,17 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
         if(other.CompareTag("Enemy"))
-        {
-            other.GetComponent<Enemy>()?.TakeDamage(5); 
+        {   
+            Vector2 knockback = new Vector2(3f, 4f);
+            if (rb.linearVelocity.x > 0) 
+            {
+                knockback = new Vector2(3f, 4f);
+            } 
+            else if (rb.linearVelocity.x < 0) 
+            {
+                knockback = new Vector2(-3f, 4f);
+            } 
+            other.GetComponent<Enemy>()?.TakeDamage(5,knockback); 
             if(magicExplosion != null)Instantiate(magicExplosion, transform.position, transform.rotation);
             Destroy(gameObject);
         }
