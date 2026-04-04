@@ -22,15 +22,15 @@ public class Health : MonoBehaviour
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
     }
 
-    IEnumerator invulneraviltyTime()
+    IEnumerator StartInvulneraviltyTime()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         AllSpriteRenderers(new Color(1f, 1f, 1f, 0f));
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         AllSpriteRenderers(new Color(1f, 1f, 1f, 1f));
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         AllSpriteRenderers(new Color(1f, 1f, 1f, 0f));
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         AllSpriteRenderers(new Color(1f, 1f, 1f, 1f));
         invulnerability = false;
     }
@@ -40,7 +40,8 @@ public class Health : MonoBehaviour
         //Si el jugador esta en su tiempo de invulneravilidad no recibe daño
         if(invulnerability)return;
         invulnerability = true;
-        StartCoroutine(invulneraviltyTime());
+        
+        StartCoroutine(StartInvulneraviltyTime());
 
         //Recibir daño
         int newLife = life - damage;
@@ -59,7 +60,7 @@ public class Health : MonoBehaviour
             Destroy(gameObject);
             uIController.SetLife(0);
             uIController.ShowDeathScreen(true);
-        }
+        }        
     }
 
     private void AllSpriteRenderers(Color color)
