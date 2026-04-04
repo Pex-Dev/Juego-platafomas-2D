@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Enemy
   - Coin
+  - BreakableBox
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - GorePart
   - MagnetoItem
   - Item
-  - 
+  - Box
   - 
   - 
   - 

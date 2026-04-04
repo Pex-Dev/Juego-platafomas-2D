@@ -32,5 +32,11 @@ public class Bullet : MonoBehaviour
             if(magicExplosion != null)Instantiate(magicExplosion, transform.position, transform.rotation);
             Destroy(gameObject);
         }
+        Debug.Log(other.name);
+        if(other.CompareTag("BreakableBox"))
+        {  
+            other.GetComponent<BreakableBox>()?.TakeDamage(5); 
+            Destroy(gameObject);
+        }
     }
 }
