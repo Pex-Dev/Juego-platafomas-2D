@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  totalLife: 10
+  totalLife: 15
   currentLife: 0
   speed: 4
   jumpForce: 15
@@ -135,6 +135,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
+  isKnockback: 0
 --- !u!114 &-5982078528547928745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +289,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 3
