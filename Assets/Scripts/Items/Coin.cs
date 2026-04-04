@@ -6,7 +6,7 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {   
-            collision.gameObject.GetComponent<ObjectAbsorption>()?.AddCoins(10);
+            collision.gameObject.GetComponent<ObjectAbsorption>()?.AddCoins(5);
             Destroy(gameObject);
         }
     }
