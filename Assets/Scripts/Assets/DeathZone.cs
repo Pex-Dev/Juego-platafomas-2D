@@ -24,7 +24,7 @@ public class DeathZone : MonoBehaviour
 
             Vector2 knockback = new Vector2(dir * 3f, 3f);
 
-            other.GetComponent<PlayerMovement>().TakeDamage(1000, knockback * 2);
+            other.GetComponent<Health>().TakeDamage(1000, knockback * 2);
         }
     }
 }
