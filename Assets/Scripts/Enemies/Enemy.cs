@@ -35,7 +35,9 @@ public class Enemy : MonoBehaviour
     public LayerMask groundLayer;
     public LayerMask enemyLayer;
 
-    public enum VerticalOrigin { Top, Center, Bottom}
+    public bool isKnockback = false; //Si el jugador ha sido empujado o golpeado por un enemigo, entonces no debe poder moverse para no contrarestrar la fuerza del empuje 
+    private float knockbackTimer = 0.5f;//Tiempo que dura el knockback
+    private float knockbackTimerCounter;
 
     void Start()
     {
@@ -55,6 +57,7 @@ public class Enemy : MonoBehaviour
         sr.flipX = direction == 0;
         CheckIsGroud();
         ChaseTarget();
+        CheckKnockback();
     }
 
 
@@ -134,12 +137,8 @@ public class Enemy : MonoBehaviour
     }
 
     private void Move(int direction)
-    {       
-        float targetDistance = Vector2.Distance(transform.position, target.transform.position);
-        
-        //float speedBonus = targetDistance > 6f ? 0.3f : 0.3f;//Aumentar la velocida para el salto
-
-        //float movSpeed = isGrounded ? speed : speed + speed*speedBonus;
+    {
+        if (isKnockback)return;
         float moveDirection = direction == 1 ? 1.0f : -1.0f;
         rb.linearVelocity = new Vector2(moveDirection * speed, rb.linearVelocity.y); //Añadir velocidad en el eje x
         anim.SetBool("isMoving",true);
@@ -280,9 +279,31 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
-    public void TakeDamage(float damage )
+    void CheckKnockback()
     {
+        if (isKnockback)
+        {
+            knockbackTimerCounter -= Time.deltaTime;
+            if(knockbackTimerCounter <= 0)
+            {
+                isKnockback = false;
+                knockbackTimerCounter = knockbackTimer;
+            }
+        }
+    }
+
+    public void AddKnockBack(Vector2 knockback)
+    {   
+        if(isKnockback)return;        
+        isKnockback = true;
+        rb.linearVelocity = new Vector2(0f, 0f);
+        rb.AddForce(knockback, ForceMode2D.Impulse);
+        knockbackTimerCounter = knockbackTimer;      
+    }
+
+    public void TakeDamage(float damage, Vector2 knockback )
+    {   
+        AddKnockBack(knockback);
         currentLife -= damage;
         if(currentLife <= 0)
         {   
