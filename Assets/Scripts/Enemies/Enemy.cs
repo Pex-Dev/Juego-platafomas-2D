@@ -33,7 +33,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool isGrounded; //Si el personaje toca el suelo
     public float groundRadius = 2f;
     public LayerMask groundLayer;
+    public LayerMask enemyLayer;
 
+    public enum VerticalOrigin { Top, Center, Bottom}
 
     void Start()
     {
@@ -104,7 +106,7 @@ public class Enemy : MonoBehaviour
         }
 
         //Si detecta que DEBE saltar, salta y se mueve.
-        bool mustJump = (isObjectAhead(direction,groundLayer) && IsTargetAvobe()) || 
+        bool mustJump = (isObjectAhead(direction,groundLayer,"top") && IsTargetAvobe()) || 
                         (!isGroundAhead(direction) && ThereIsGroundIfJump());
 
         if (mustJump)
@@ -114,8 +116,8 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        //Caminar solo si hay camino adelante
-        if (isGroundAhead(direction))
+        //Caminar solo si hay camino adelante y si no hay otro enemigo para que no se acoplen a lo maldito
+        if (isGroundAhead(direction) && !isObjectAhead(direction,enemyLayer,"center",0.2f))
         {
             Move(direction);
         }
@@ -174,14 +176,31 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private bool isObjectAhead(int direction, LayerMask layer)
+    private bool isObjectAhead(int direction, LayerMask layer, string verticalPosition = "center",float distance = 2f)
     {
         float colliderHeigth = bc.size.y; //Altura del collider del personaje
         float colliderWidth = bc.size.x; //Ancho del collider del personaje
 
+        float positionY = transform.position.y;
+        switch (verticalPosition)
+        {
+            case "center":
+                positionY = transform.position.y;
+                break;
+            case "top":
+                positionY = transform.position.y + colliderHeigth/2;
+                break;
+            case "bottom":
+                positionY = transform.position.y - colliderHeigth/2;
+                break;
+            default:
+                positionY = transform.position.y;
+                break;
+        }
+
         Vector2 checkOrigen = direction == 1 ? 
-                                    new Vector2(transform.position.x + colliderWidth/2, transform.position.y + colliderHeigth/2):
-                                    new Vector2(transform.position.x - colliderWidth/2, transform.position.y + colliderHeigth/2);
+                                    new Vector2(transform.position.x + colliderWidth/2, positionY):
+                                    new Vector2(transform.position.x - colliderWidth/2, positionY);
 
         Vector2 checkDirection = direction == 1 ?  Vector2.right : Vector2.left;
 
@@ -189,8 +208,12 @@ public class Enemy : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(
                             checkOrigen, 
                             checkDirection, 
-                            2f
+                            distance
                             ,layer);
+
+        Color debugColor = hit.collider != null ? Color.green : Color.red;
+        Debug.DrawRay(checkOrigen, checkDirection * distance, debugColor);
+
         return hit.collider != null;
     }
 
