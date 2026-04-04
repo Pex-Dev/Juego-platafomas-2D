@@ -6,16 +6,16 @@ public class UIController : MonoBehaviour
 
     [SerializeField] private GameObject playingScreen;
     [SerializeField] private GameObject deathScreen;
+    [SerializeField] private CoinCounter coinCounter;
 
     void Start()
     {
         playingScreen.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddCoins(int nCoins)
     {
-        
+        coinCounter.AddCoins(nCoins);
     }
 
     public void SetLife(int life)
