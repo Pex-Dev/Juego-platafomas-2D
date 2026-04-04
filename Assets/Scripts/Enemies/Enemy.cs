@@ -88,42 +88,47 @@ public class Enemy : MonoBehaviour
 
         direction = targetPosition.x < ownPosition.x ? 0 : 1;
 
-        if(targetPosition.x < ownPosition.x + colliderWidth || targetPosition.x > ownPosition.x + colliderWidth)
+        //Ver si esta cerca del objetivo
+        float distanceX = Mathf.Abs(targetPosition.x - ownPosition.x);
+        if (distanceX <= colliderWidth) 
         {
-            //Si esta cayendo o saltando que siga nomas
-            if (!isGrounded)
-            {
-                Move(direction);
-                return;
-            }
-
-            //Verificar si debería saltar
-            bool mustJump = (isWallAhead(direction) && IsTargetAvobe()) || !isGroundAhead(direction) && ThereIsGroundIfJump();
-
-            //Si no debe saltar
-            if (!mustJump)
-            {
-                //Moverse solo si hay suelo adelante
-                if (isGroundAhead(direction))
-                {
-                    Move(direction);
-                }
-                else
-                {
-                    rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-                    anim.SetBool("isMoving",false);
-                }
-                return;
-            }
-
-            Jump();
-            Move(direction);//Moverse
+            StopMoving();
             return;
-                        
-        }else{
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-            anim.SetBool("isMoving",false);
         }
+
+        //Si está en el aire, que siga moviéndose y sale.
+        if (!isGrounded)
+        {
+            Move(direction);
+            return;
+        }
+
+        //Si detecta que DEBE saltar, salta y se mueve.
+        bool mustJump = (isWallAhead(direction) && IsTargetAvobe()) || 
+                        (!isGroundAhead(direction) && ThereIsGroundIfJump());
+
+        if (mustJump)
+        {
+            Jump();
+            Move(direction);
+            return;
+        }
+
+        //Caminar solo si hay camino adelante
+        if (isGroundAhead(direction))
+        {
+            Move(direction);
+        }
+        else
+        {
+            StopMoving();
+        }
+    }
+
+    void StopMoving()
+    {
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+        anim.SetBool("isMoving", false);
     }
 
     private void Move(int direction)
