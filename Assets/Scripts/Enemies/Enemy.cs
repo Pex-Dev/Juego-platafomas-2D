@@ -104,7 +104,7 @@ public class Enemy : MonoBehaviour
         }
 
         //Si detecta que DEBE saltar, salta y se mueve.
-        bool mustJump = (isWallAhead(direction) && IsTargetAvobe()) || 
+        bool mustJump = (isObjectAhead(direction,groundLayer) && IsTargetAvobe()) || 
                         (!isGroundAhead(direction) && ThereIsGroundIfJump());
 
         if (mustJump)
@@ -174,7 +174,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private bool isWallAhead(int direction)
+    private bool isObjectAhead(int direction, LayerMask layer)
     {
         float colliderHeigth = bc.size.y; //Altura del collider del personaje
         float colliderWidth = bc.size.x; //Ancho del collider del personaje
@@ -190,7 +190,7 @@ public class Enemy : MonoBehaviour
                             checkOrigen, 
                             checkDirection, 
                             2f
-                            ,groundLayer);
+                            ,layer);
         return hit.collider != null;
     }
 
