@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 10590023}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1876107963}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ResetEscene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &10590023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,6 +691,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105968501}
   m_CullTransparentMesh: 1
+--- !u!1 &133334830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 133334832}
+  - component: {fileID: 133334831}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &133334831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133334830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640e1762d850e8949a44230137d0ab23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  screenFaderPrefab: {fileID: 2375238956655729233, guid: f44f53e6b718fd44c86649b8ac3d2e74, type: 3}
+--- !u!4 &133334832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133334830}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.62556, y: 5.56815, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &172496660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2520,7 +2577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1004196609552294021, guid: 468cd6b233b7ce64384d482273cd231c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6471095
+      value: -1.33
       objectReference: {fileID: 0}
     - target: {fileID: 1004196609552294021, guid: 468cd6b233b7ce64384d482273cd231c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4377,6 +4434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1872881451}
   - component: {fileID: 1872881450}
+  - component: {fileID: 1872881452}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -4414,6 +4472,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1872881452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872881448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.StandaloneInputModule
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1 &1873354618
 GameObject:
   m_ObjectHideFlags: 0
@@ -26410,3 +26488,4 @@ SceneRoots:
   - {fileID: 935949530}
   - {fileID: 1966272330}
   - {fileID: 722302320}
+  - {fileID: 133334832}
