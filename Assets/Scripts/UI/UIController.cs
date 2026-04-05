@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -38,5 +39,10 @@ public class UIController : MonoBehaviour
         {
             playingScreen.SetActive(false);
         }
+    }
+
+    public void ResetEscene()
+    {
+        ScenesManager.instance.ChangeScene(SceneManager.GetActiveScene().name);
     }
 }
