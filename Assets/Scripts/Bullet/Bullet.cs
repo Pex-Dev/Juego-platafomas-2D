@@ -10,6 +10,14 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject,2f);
     }
 
+    void Update()
+    {
+        if (!GetComponent<Renderer>().isVisible)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Ground"))
