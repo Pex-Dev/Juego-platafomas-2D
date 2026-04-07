@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private int armDirection = 1;
 
-    private float coyoteTime = 0.2f; //Tiempo máximo del jugador en el aire para poder saltar luego de caer por un borde
+    private float coyoteTime = 0.1f; //Tiempo máximo del jugador en el aire para poder saltar luego de caer por un borde
     private float coyoteTimeCounter;
 
     public bool isKnockback = false; //Si el jugador ha sido empujado o golpeado por un enemigo, entonces no debe poder moverse para no contrarestrar la fuerza del empuje 
@@ -116,7 +116,8 @@ public class PlayerMovement : MonoBehaviour
     {
         //Saltar si se presiona espacio y esta tocando el suelo
         if (Input.GetKeyDown(KeyCode.Space) && (isGrounded ||  coyoteTimeCounter >= 0f))
-        {
+        {   
+            coyoteTimeCounter = 0f;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce); //Añadir velocidad en el eje y
         }
     }
