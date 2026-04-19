@@ -182,6 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   life: 1
   dieAnimation: {fileID: 938081542248525165}
+  breakSound: {fileID: 8300000, guid: 77745969fbeae7d4b9f0bcaf96f80e1c, type: 3}
   posiblesDrops:
   - prefab: {fileID: 8996147059879846948, guid: 10d3c9227199dd942a35aebaa9b38793, type: 3}
     cantidadMin: 3
