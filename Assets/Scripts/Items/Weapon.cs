@@ -5,6 +5,7 @@ public class Weapon : MonoBehaviour
     public float fireRate = 0.2f;
     [SerializeField] private float fireRateCounter = 0f;
     public float bullerForce = 20f;
+    public AudioClip sound; //Sonido del arma al atacar
 
     public GameObject bulletPrefab;
 
@@ -34,5 +35,6 @@ public class Weapon : MonoBehaviour
 
         //Aplicar la velocidad
         bala.GetComponent<Rigidbody2D>().linearVelocity = direccion * bullerForce;
+        ScenesManager.instance.PlaySound(sound);
     }
 }
