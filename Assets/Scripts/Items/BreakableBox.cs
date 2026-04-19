@@ -6,6 +6,7 @@ public class BreakableBox : MonoBehaviour
     public int life;
 
     [SerializeField] private DieAnimation dieAnimation;
+    [SerializeField] private AudioClip breakSound; //Sonido que se reproduce al romper
 
     [System.Serializable]
     public class DropConfig
@@ -29,6 +30,9 @@ public class BreakableBox : MonoBehaviour
         if (life <= 0)
         {
             dieAnimation.StartAnimation();
+
+            if(breakSound!=null) ScenesManager.instance.PlaySound(breakSound);
+
             DropItems();
             Destroy(gameObject);
         }
