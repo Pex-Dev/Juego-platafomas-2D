@@ -14,6 +14,8 @@ public class Health : MonoBehaviour
 
     private bool invulnerability = false;
 
+    [SerializeField] private AudioClip[] hurtSound;
+
     void Start()
     {        
         uIController = GameObject.Find("Canvas").GetComponent<UIController>();
@@ -48,6 +50,9 @@ public class Health : MonoBehaviour
         if(newLife < 0) newLife = 0;
         life = newLife;
 
+        //Reproducir sonido
+        PlayHurtSound();
+
         //Actualizar vida en el UI
         uIController.SetLife(newLife);
         
@@ -69,5 +74,10 @@ public class Health : MonoBehaviour
         {
             sprite.color = color;
         }
+    }
+
+    public void PlayHurtSound()
+    {
+        ScenesManager.instance.PlaySound(hurtSound[Random.Range(0,hurtSound.Length)]);
     }
 }
