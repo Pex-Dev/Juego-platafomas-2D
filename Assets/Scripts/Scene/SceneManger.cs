@@ -6,6 +6,7 @@ public class ScenesManager : MonoBehaviour
 {
     public static ScenesManager instance;
     public GameObject screenFaderPrefab;
+    [SerializeField] private GameObject audioPlayer; //Prefab para reproducir sonidos
     private ScreenFader screenFader;
 
     void Awake()
@@ -19,6 +20,15 @@ public class ScenesManager : MonoBehaviour
     public void ChangeScene(string sceneName)
     {
         StartCoroutine(FadeAndChangeScene(sceneName));
+    }
+
+    public void PlaySound(AudioClip sound)
+    {
+        GameObject s = Instantiate(audioPlayer);
+        AudioSource a = s.GetComponent<AudioSource>();
+        a.clip = sound;
+        a.Play();
+        Destroy(s, sound.length);//Destruir al terminar audio
     }
 
     private IEnumerator FadeAndChangeScene(string sceneName)
