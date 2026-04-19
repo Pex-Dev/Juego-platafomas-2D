@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295f18e7fecb36e4db6afe862b65eab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  stoneSound: {fileID: 8300000, guid: 10eb5ee73c489874abfa6d6a9307ad81, type: 3}
 --- !u!1 &2683113034910957293
 GameObject:
   m_ObjectHideFlags: 0
