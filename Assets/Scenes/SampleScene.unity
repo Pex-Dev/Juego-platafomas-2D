@@ -783,6 +783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   screenFaderPrefab: {fileID: 2375238956655729233, guid: f44f53e6b718fd44c86649b8ac3d2e74, type: 3}
+  audioPlayer: {fileID: 6131442446104022537, guid: c945489509bf9044ab6c113d0d790803, type: 3}
 --- !u!4 &133334832
 Transform:
   m_ObjectHideFlags: 0
@@ -1863,6 +1864,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   isKnockback: 0
+  hurtSounds: []
+  deathSound: {fileID: 0}
 --- !u!50 &429420347
 Rigidbody2D:
   serializedVersion: 5
@@ -3079,7 +3082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.033, y: 0.075}
   m_AnchorMax: {x: 0.259734, y: 0.94688034}
-  m_AnchoredPosition: {x: -0.2999878, y: -0.5000191}
+  m_AnchoredPosition: {x: -0.2999878, y: -0.5000229}
   m_SizeDelta: {x: -0.45999908, y: -0.20999908}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &796524758
@@ -3407,6 +3410,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3546309323297571781, guid: 468cd6b233b7ce64384d482273cd231c, type: 3}
+      propertyPath: breakSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b283e7a675cc8b64fb38163d7cc6c5a0, type: 3}
     - target: {fileID: 4031046131551554831, guid: 468cd6b233b7ce64384d482273cd231c, type: 3}
       propertyPath: m_Name
       value: Caja
@@ -6523,6 +6530,9 @@ MonoBehaviour:
   life: 6
   pm: {fileID: 1873354623}
   dieAnimation: {fileID: 1873354626}
+  hurtSound:
+  - {fileID: 8300000, guid: bc0a8e4783fabaf49ac4c61da951484c, type: 3}
+  - {fileID: 8300000, guid: 0985baf530e21734a9e8a8383e92f0be, type: 3}
 --- !u!114 &1873354628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40400,6 +40410,7 @@ MonoBehaviour:
   fireRate: 0.2
   fireRateCounter: 0
   bullerForce: 20
+  sound: {fileID: 8300000, guid: abfb692f9742e554f80a4eab6974c57c, type: 3}
   bulletPrefab: {fileID: 7286319226142009260, guid: e9968bddae503084bb9a3f8acff6de10, type: 3}
 --- !u!4 &2002755583 stripped
 Transform:

@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
     private bool invulnerability = false;
 
     [SerializeField] private AudioClip[] hurtSound;
+    [SerializeField] private AudioClip deathSound;
 
     void Start()
     {        
@@ -61,6 +62,7 @@ public class Health : MonoBehaviour
 
         //Morir si tienes 0 vida
         if(life <= 0){
+            if(deathSound != null) ScenesManager.instance.PlaySound(deathSound);
             dieAnimation.StartAnimation();
             Destroy(gameObject);
             uIController.SetLife(0);
