@@ -15,7 +15,7 @@ public class ScenesManager : MonoBehaviour
     void Start()
     {
         if(!musicScene)return;
-        PlaySound(musicScene);
+        PlayMusic(musicScene);
     }
 
     void Awake()
