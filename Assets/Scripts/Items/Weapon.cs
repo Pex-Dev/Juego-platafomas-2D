@@ -20,7 +20,8 @@ public class Weapon : MonoBehaviour
 
     public void Attack(Transform shootPoint)
     {
-        if(fireRateCounter < fireRate) return;
+        if(fireRateCounter < fireRate) return;        
+        if(Time.timeScale == 0f)return;
         fireRateCounter = 0f;
 
         //Obtener posición del mouse en el mundo

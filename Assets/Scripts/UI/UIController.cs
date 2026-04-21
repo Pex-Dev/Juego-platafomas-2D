@@ -7,11 +7,25 @@ public class UIController : MonoBehaviour
 
     [SerializeField] private GameObject playingScreen;
     [SerializeField] private GameObject deathScreen;
+    [SerializeField] private GameObject pauseScreen;
     [SerializeField] private CoinCounter coinCounter;
+
+    [SerializeField] private bool isPaused = false;
+    [SerializeField] private bool death = false;
+
 
     void Start()
     {
         playingScreen.SetActive(true);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !death)
+        {
+            isPaused = !isPaused;
+            PauseGame(isPaused);
+        }
     }
 
     public void AddCoins(int nCoins)
@@ -24,25 +38,54 @@ public class UIController : MonoBehaviour
         lifeController.UpdateLifeBar(life);
     }
 
+    public void PauseGame(bool value)
+    {        
+        Time.timeScale = value ? 0f : 1f;
+        if (value)
+        {
+            ShowPauseScreen(true);
+        }
+        else
+        {
+            ShowPauseScreen(false);
+            ShowPlayingScreen(true);
+        }
+    }
+
     public void ShowPlayingScreen(bool value)
     {
         playingScreen.SetActive(value);
         if (value)
         {
             deathScreen.SetActive(false);
+            pauseScreen.SetActive(false);
         }
     }
+
     public void ShowDeathScreen(bool value)
     {
+        death = true;
         deathScreen.SetActive(value);
         if (value)
         {
             playingScreen.SetActive(false);
+            pauseScreen.SetActive(false);
+        }
+    }
+    
+    public void ShowPauseScreen(bool value)
+    {
+        pauseScreen.SetActive(value);
+        if (value)
+        {
+            playingScreen.SetActive(false);
+            deathScreen.SetActive(false);
         }
     }
 
     public void ResetEscene()
     {
+        Time.timeScale = 1f;
         ScenesManager.instance.ChangeScene(SceneManager.GetActiveScene().name);
     }
 }
