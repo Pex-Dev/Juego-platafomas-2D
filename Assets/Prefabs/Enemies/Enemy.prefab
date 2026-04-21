@@ -136,6 +136,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isKnockback: 0
+  hurtSounds:
+  - {fileID: 8300000, guid: f6db6556bbd43c241b0dc2b2cde057ef, type: 3}
+  - {fileID: 8300000, guid: db99b2897b2971347a03a7b45985b329, type: 3}
+  - {fileID: 8300000, guid: 59bd90d99e1bd1e4ba6d5b916592b9ee, type: 3}
+  - {fileID: 8300000, guid: c204298a803cb4b4381e6e114c951dd6, type: 3}
+  - {fileID: 8300000, guid: a1441754414bef149b4efec5253ab909, type: 3}
+  deathSound: {fileID: 8300000, guid: ab843af728e36314db0641774e18e2be, type: 3}
 --- !u!114 &-5982078528547928745
 MonoBehaviour:
   m_ObjectHideFlags: 0

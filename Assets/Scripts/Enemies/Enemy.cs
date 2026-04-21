@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -38,6 +37,9 @@ public class Enemy : MonoBehaviour
     public bool isKnockback = false; //Si el jugador ha sido empujado o golpeado por un enemigo, entonces no debe poder moverse para no contrarestrar la fuerza del empuje 
     private float knockbackTimer = 0.5f;//Tiempo que dura el knockback
     private float knockbackTimerCounter;
+
+    [SerializeField] private AudioClip[] hurtSounds;
+    [SerializeField] private AudioClip deathSound;
 
     void Start()
     {
@@ -305,9 +307,14 @@ public class Enemy : MonoBehaviour
     {   
         AddKnockBack(knockback);
         currentLife -= damage;
+
+        //reproducir sonidos de daño
+        if(hurtSounds.Length>0)ScenesManager.instance.PlaySound(hurtSounds[ UnityEngine.Random.Range(0,hurtSounds.Length) ]);
+
         if(currentLife <= 0)
         {   
             dieAnimation.StartAnimation();
+            if(deathSound!=null)ScenesManager.instance.PlaySound(deathSound);
             Destroy(gameObject);
         }
     }

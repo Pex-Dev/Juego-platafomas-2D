@@ -4,7 +4,8 @@ public class BloquePiedra : MonoBehaviour
 {
     private Rigidbody2D rb; //Componente RigidBody2D;
     private bool active = false;
-
+    [SerializeField] private AudioClip stoneSound; //Sonido de la roca al golpear
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,6 +25,7 @@ public class BloquePiedra : MonoBehaviour
             {
                 active = false;
                 rb.simulated = false;
+                if(stoneSound!=null)ScenesManager.instance.PlaySound(stoneSound);
             }
         }
     }
