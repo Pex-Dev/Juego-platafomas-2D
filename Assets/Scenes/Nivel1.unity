@@ -17859,7 +17859,7 @@ MonoBehaviour:
   playingScreen: {fileID: 590113816}
   deathScreen: {fileID: 588338595}
   pauseScreen: {fileID: 611881070}
-  levelCompleteScreen: {fileID: 1567165153}
+  levelCompleteScreen: {fileID: 0}
   coinCounter: {fileID: 1848223041}
   isPaused: 0
   death: 0
