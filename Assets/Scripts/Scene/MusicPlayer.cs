@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
+    public string currentPlaying = "None";
+    public string nextSong = "none";
+
     public AudioSource audioSourceA;
     public AudioSource audioSourceB;
 
@@ -20,8 +23,16 @@ public class MusicPlayer : MonoBehaviour
 
     public void PlayNewMusic(AudioClip newClip, bool stopCurrent = false)
     {     
+        if(currentSource.clip == null && nextSource.clip == null)
+        {
+            currentSource.clip = newClip;
+            currentSource.Play();
+            currentPlaying = newClip.name;
+            return;
+        }
         StopAllCoroutines();      
-        nextSource.clip = newClip;
+        nextSource.clip = newClip;        
+        nextSong = newClip.name;
 
         if (stopCurrent)
         {
@@ -43,7 +54,8 @@ public class MusicPlayer : MonoBehaviour
     }
     
     private IEnumerator Crossfade()
-    {
+    {   
+        Debug.Log("iniciando fade");
         float t = 0f;
         while (t < crossfadeTime)
         {
@@ -59,5 +71,6 @@ public class MusicPlayer : MonoBehaviour
         AudioSource temp = currentSource;
         currentSource = nextSource;
         nextSource = temp;
+        Debug.Log("Fade terminado");
     }
 }

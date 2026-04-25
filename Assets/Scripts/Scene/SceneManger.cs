@@ -40,14 +40,15 @@ public class ScenesManager : MonoBehaviour
         Destroy(s, sound.length);//Destruir al terminar audio
     }
 
-    public void PlayMusic(AudioClip music, bool loop = true)
+    public void PlayMusic(AudioClip music, bool loop = true, bool stopCurrent = false)
     {
         if (!musicPlayer)
-        {
+        {   
+            Debug.Log("Instanciar nuevo music player");
             musicPlayer = Instantiate(musicPrefab);
         }
         musicPlayer.GetComponent<MusicPlayer>().setLoop(loop);
-        musicPlayer.GetComponent<MusicPlayer>().PlayNewMusic(music, true);
+        musicPlayer.GetComponent<MusicPlayer>().PlayNewMusic(music,stopCurrent);
     }
 
     private IEnumerator FadeAndChangeScene(string sceneName)

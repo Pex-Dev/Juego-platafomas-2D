@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundRadius = 0.2f;
     public LayerMask groundLayer;
 
-    private bool isGrounded; //Si el jugador toca el suelo
+    public bool isGrounded; //Si el jugador toca el suelo
 
     private ArmAim arm; //Brazo del personaje
     private SpriteRenderer srLeftArm; //Componente SpriteRenderer del brazo izquierdo
@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     public bool isKnockback = false; //Si el jugador ha sido empujado o golpeado por un enemigo, entonces no debe poder moverse para no contrarestrar la fuerza del empuje 
     private float knockbackTimer = 0.8f;//Tiempo que dura el knockback
     private float knockbackTimerCounter;
+
+    public bool canMove = true;
 
     void Start()
     {
@@ -79,7 +81,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Move()
-    {
+    {   
+        if(!canMove)return;
         float moveInput = Input.GetAxis("Horizontal"); //Obtiene el input -1.0 y 1.0
 
         //No debe poder moverse si esta siendo empujado
@@ -87,17 +90,21 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocity.y); //Añadir velocidad en el eje x            
         }
-        anim.SetBool("isMoving", moveInput != 0 && isGrounded);
+        AnimateMovement(moveInput);
+    }
 
+    void AnimateMovement(float direction)
+    {
+        anim.SetBool("isMoving", direction != 0 && isGrounded);
 
         //Si el jugador esta apretando las teclas para mover
-        if(moveInput != 0)
+        if(direction != 0)
         {   
             //Si se mueve en la misma dirección que apunta, continuar
-            if(armDirection == Math.Sign(moveInput))
+            if(armDirection == Math.Sign(direction))
             {                
-                sr.flipX = moveInput < 0;
-                srLeftArm.enabled = moveInput < 0;
+                sr.flipX = direction < 0;
+                srLeftArm.enabled = direction < 0;
             }//Usar dirección de apuntado
             else
             {
@@ -110,6 +117,14 @@ public class PlayerMovement : MonoBehaviour
             sr.flipX = armDirection < 0;
             srLeftArm.enabled = armDirection < 0;
         }
+        
+    }
+
+    public void ForceMove(float direction, float speed = 10f)
+    {
+        if(!isGrounded)return;
+        rb.linearVelocity = new Vector2(direction * speed, rb.linearVelocity.y);
+        AnimateMovement(direction);
     }
 
     void Jump()

@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
     private SpriteRenderer[] spriteRenderers;
     private UIController uIController;
 
-    private bool invulnerability = false;
+    public bool invulnerability = false;
 
     [SerializeField] private AudioClip[] hurtSound;
     [SerializeField] private AudioClip deathSound;
