@@ -1,0 +1,1339 @@
+fileFormatVersion: 2
+guid: ba7f1ba0ac1a99e4295501c2b9ffaf74
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8622471338651779659
+    second: nivel completado_0
+  - first:
+      213: 2104205707181986811
+    second: nivel completado_1
+  - first:
+      213: 1078614549814508114
+    second: nivel completado_2
+  - first:
+      213: -3936805072190981399
+    second: nivel completado_3
+  - first:
+      213: 5076720040219861130
+    second: nivel completado_4
+  - first:
+      213: -8438093935137426604
+    second: nivel completado_5
+  - first:
+      213: -4051665720012140998
+    second: nivel completado_6
+  - first:
+      213: 2028944896830230652
+    second: nivel completado_7
+  - first:
+      213: 4214919330775829136
+    second: nivel completado_8
+  - first:
+      213: 4457201924792218117
+    second: nivel completado_9
+  - first:
+      213: -3928479410406234391
+    second: nivel completado_10
+  - first:
+      213: -2343322374598342399
+    second: nivel completado_11
+  - first:
+      213: 5711259785794073161
+    second: nivel completado_12
+  - first:
+      213: -805842194606886445
+    second: nivel completado_13
+  - first:
+      213: 499532494758155632
+    second: nivel completado_14
+  - first:
+      213: 5821822160715617367
+    second: nivel completado_15
+  - first:
+      213: 2422704122651815491
+    second: nivel completado_16
+  - first:
+      213: -45608855658879366
+    second: nivel completado_17
+  - first:
+      213: 1049364057960474220
+    second: nivel completado_18
+  - first:
+      213: 7342964280094120702
+    second: nivel completado_19
+  - first:
+      213: 7155285313812301528
+    second: nivel completado_20
+  - first:
+      213: 587894814927968412
+    second: nivel completado_21
+  - first:
+      213: -3569506900444944664
+    second: nivel completado_22
+  - first:
+      213: -6126295294503927100
+    second: nivel completado_23
+  - first:
+      213: 1907627090060810761
+    second: nivel completado_24
+  - first:
+      213: -4153867135614921808
+    second: nivel completado_25
+  - first:
+      213: 4240928718573564741
+    second: nivel completado_26
+  - first:
+      213: 801907758944695298
+    second: nivel completado_27
+  - first:
+      213: 3646341309334561776
+    second: nivel completado_28
+  - first:
+      213: 2363121216971835733
+    second: nivel completado_29
+  - first:
+      213: 9015254983189019474
+    second: nivel completado_30
+  - first:
+      213: -4321314747868259992
+    second: nivel completado_31
+  - first:
+      213: -7956151192408347815
+    second: nivel completado_32
+  - first:
+      213: -4632988591618604962
+    second: nivel completado_33
+  - first:
+      213: 94799745859273654
+    second: nivel completado_34
+  - first:
+      213: -3351629669615076311
+    second: nivel completado_35
+  - first:
+      213: 6762837688207439758
+    second: nivel completado_36
+  - first:
+      213: -7393844719481325682
+    second: nivel completado_37
+  - first:
+      213: -3337925650055163114
+    second: nivel completado_38
+  - first:
+      213: 7212708198937100462
+    second: nivel completado_39
+  - first:
+      213: -5246402230712167302
+    second: nivel completado_40
+  - first:
+      213: -2763332392047913051
+    second: nivel completado_41
+  - first:
+      213: -5854223682807913103
+    second: nivel completado_42
+  - first:
+      213: 1943652836865273494
+    second: nivel completado_43
+  - first:
+      213: 9164639205449254079
+    second: nivel completado_44
+  - first:
+      213: 6304277112668046507
+    second: nivel completado_45
+  - first:
+      213: 7768121120809953543
+    second: nivel completado_46
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nivel completado_0
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 160
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b42835aaffb29a770800000000000000
+      internalID: 8622471338651779659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_1
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 155
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf39eee21f3a33d10800000000000000
+      internalID: 2104205707181986811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_2
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 142
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25af243e73208fe00800000000000000
+      internalID: 1078614549814508114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_3
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 160
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eab91a15a8ad59c0800000000000000
+      internalID: -3936805072190981399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_4
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 160
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a80696d9af1247640800000000000000
+      internalID: 5076720040219861130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_5
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 32
+        width: 84
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45371ced54ed5ea80800000000000000
+      internalID: -8438093935137426604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_6
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 149
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3e8c0a8e7795c7c0800000000000000
+      internalID: -4051665720012140998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_7
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 149
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c70586442a2482c10800000000000000
+      internalID: 2028944896830230652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_8
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 26
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09a02dbbcc66e7a30800000000000000
+      internalID: 4214919330775829136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_9
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 0
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5027d6b09892bdd30800000000000000
+      internalID: 4457201924792218117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e6ec4b4acc3b79c0800000000000000
+      internalID: -3928479410406234391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_11
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 26
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10947db37b8da7fd0800000000000000
+      internalID: -2343322374598342399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_12
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 32
+        width: 61
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942ba300488724f40800000000000000
+      internalID: 5711259785794073161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_13
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 26
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d17f652bc211d4f0800000000000000
+      internalID: -805842194606886445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_14
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 26
+        width: 61
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07513d74822bee600800000000000000
+      internalID: 499532494758155632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_15
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 26
+        width: 25
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75493fae8644bc050800000000000000
+      internalID: 5821822160715617367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_16
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 32
+        width: 61
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e2982409c2f9120800000000000000
+      internalID: 2422704122651815491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_17
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 27
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7627d7ccf6fd5ff0800000000000000
+      internalID: -45608855658879366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_18
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 26
+        width: 25
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c66ebca0d07109e00800000000000000
+      internalID: 1049364057960474220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_19
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 32
+        width: 56
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efa5469ab1377e560800000000000000
+      internalID: 7342964280094120702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_20
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 26
+        width: 24
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d60a54251eac4360800000000000000
+      internalID: 7155285313812301528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_21
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 31
+        width: 55
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c985319283f982800800000000000000
+      internalID: 587894814927968412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_22
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 26
+        width: 25
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e66ca7d260967ec0800000000000000
+      internalID: -3569506900444944664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_23
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 32
+        width: 90
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c242fd53e60bfaa0800000000000000
+      internalID: -6126295294503927100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_24
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 26
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90a9cfa3bb0497a10800000000000000
+      internalID: 1907627090060810761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_25
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 26
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b3d08929df7a56c0800000000000000
+      internalID: -4153867135614921808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_26
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 26
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 543745c333ecada30800000000000000
+      internalID: 4240928718573564741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_27
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 3
+        width: 62
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204378aabd2f02b00800000000000000
+      internalID: 801907758944695298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_28
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 32
+        width: 120
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f328b80a186a9230800000000000000
+      internalID: 3646341309334561776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_29
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 26
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5598bcaf93e7bc020800000000000000
+      internalID: 2363121216971835733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_30
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 26
+        width: 25
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b3d8074ae9c1d70800000000000000
+      internalID: 9015254983189019474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_31
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 26
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 869d7a2d12b9704c0800000000000000
+      internalID: -4321314747868259992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_32
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 26
+        width: 25
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95b233dd4a2169190800000000000000
+      internalID: -7956151192408347815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_33
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 32
+        width: 67
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e50c22c2c6154bfb0800000000000000
+      internalID: -4632988591618604962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_34
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 26
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b34db8dddbc05100800000000000000
+      internalID: 94799745859273654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_35
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 32
+        width: 61
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92cfeebb29e9c71d0800000000000000
+      internalID: -3351629669615076311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_36
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 26
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e877a3fdb0d6add50800000000000000
+      internalID: 6762837688207439758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_37
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 26
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e87fae2e669c36990800000000000000
+      internalID: -7393844719481325682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_38
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 24
+        width: 62
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6131ccd6e4e4da1d0800000000000000
+      internalID: -3337925650055163114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_39
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 32
+        width: 55
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea0813274efa81460800000000000000
+      internalID: 7212708198937100462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_40
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 26
+        width: 25
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a749591c7f80137b0800000000000000
+      internalID: -5246402230712167302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a757a784dba6a9d0800000000000000
+      internalID: -2763332392047913051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_42
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1752e86d39e91cea0800000000000000
+      internalID: -5854223682807913103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_43
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 0
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ee80c05fd39fa10800000000000000
+      internalID: 1943652836865273494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_44
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 0
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb4cb6f0dc65f2f70800000000000000
+      internalID: 9164639205449254079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_45
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 0
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba4443ae1aa4d7750800000000000000
+      internalID: 6304277112668046507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nivel completado_46
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 2
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 709261a8009edcb60800000000000000
+      internalID: 7768121120809953543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      nivel completado_0: 8622471338651779659
+      nivel completado_1: 2104205707181986811
+      nivel completado_10: -3928479410406234391
+      nivel completado_11: -2343322374598342399
+      nivel completado_12: 5711259785794073161
+      nivel completado_13: -805842194606886445
+      nivel completado_14: 499532494758155632
+      nivel completado_15: 5821822160715617367
+      nivel completado_16: 2422704122651815491
+      nivel completado_17: -45608855658879366
+      nivel completado_18: 1049364057960474220
+      nivel completado_19: 7342964280094120702
+      nivel completado_2: 1078614549814508114
+      nivel completado_20: 7155285313812301528
+      nivel completado_21: 587894814927968412
+      nivel completado_22: -3569506900444944664
+      nivel completado_23: -6126295294503927100
+      nivel completado_24: 1907627090060810761
+      nivel completado_25: -4153867135614921808
+      nivel completado_26: 4240928718573564741
+      nivel completado_27: 801907758944695298
+      nivel completado_28: 3646341309334561776
+      nivel completado_29: 2363121216971835733
+      nivel completado_3: -3936805072190981399
+      nivel completado_30: 9015254983189019474
+      nivel completado_31: -4321314747868259992
+      nivel completado_32: -7956151192408347815
+      nivel completado_33: -4632988591618604962
+      nivel completado_34: 94799745859273654
+      nivel completado_35: -3351629669615076311
+      nivel completado_36: 6762837688207439758
+      nivel completado_37: -7393844719481325682
+      nivel completado_38: -3337925650055163114
+      nivel completado_39: 7212708198937100462
+      nivel completado_4: 5076720040219861130
+      nivel completado_40: -5246402230712167302
+      nivel completado_41: -2763332392047913051
+      nivel completado_42: -5854223682807913103
+      nivel completado_43: 1943652836865273494
+      nivel completado_44: 9164639205449254079
+      nivel completado_45: 6304277112668046507
+      nivel completado_46: 7768121120809953543
+      nivel completado_5: -8438093935137426604
+      nivel completado_6: -4051665720012140998
+      nivel completado_7: 2028944896830230652
+      nivel completado_8: 4214919330775829136
+      nivel completado_9: 4457201924792218117
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

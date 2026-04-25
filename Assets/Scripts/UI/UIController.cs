@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject playingScreen;
     [SerializeField] private GameObject deathScreen;
     [SerializeField] private GameObject pauseScreen;
+    [SerializeField] private GameObject levelCompleteScreen;
     [SerializeField] private CoinCounter coinCounter;
 
     [SerializeField] private bool isPaused = false;
@@ -21,7 +22,7 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !death)
+        if (Input.GetKeyDown(KeyCode.Escape) && !death && !levelCompleteScreen.activeInHierarchy)
         {
             isPaused = !isPaused;
             PauseGame(isPaused);
@@ -59,6 +60,7 @@ public class UIController : MonoBehaviour
         {
             deathScreen.SetActive(false);
             pauseScreen.SetActive(false);
+            levelCompleteScreen.SetActive(false);
         }
     }
 
@@ -70,6 +72,7 @@ public class UIController : MonoBehaviour
         {
             playingScreen.SetActive(false);
             pauseScreen.SetActive(false);
+            levelCompleteScreen.SetActive(false);
         }
     }
     
@@ -80,6 +83,17 @@ public class UIController : MonoBehaviour
         {
             playingScreen.SetActive(false);
             deathScreen.SetActive(false);
+            levelCompleteScreen.SetActive(false);
+        }
+    }
+    public void ShowCompleteLevelScreen(bool value)
+    {
+        levelCompleteScreen.SetActive(value);
+        if (value)
+        {
+            playingScreen.SetActive(false);
+            deathScreen.SetActive(false);
+            pauseScreen.SetActive(false);            
         }
     }
 

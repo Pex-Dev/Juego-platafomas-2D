@@ -11,7 +11,7 @@ public class CoinCounter : MonoBehaviour
     {
         int targetCoins = currentCoins + amount;
         StopAllCoroutines(); // Evitar que se acumulen varios cambios
-        if (animate)
+        if (animate && coinText.gameObject.activeInHierarchy)
             StartCoroutine(AnimateCoins(targetCoins, 0.5f)); // 0.5 segundos de animación
         currentCoins = targetCoins;
     }
@@ -29,7 +29,6 @@ public class CoinCounter : MonoBehaviour
             coinText.text = displayCoins.ToString();
             yield return null;
         }
-
         coinText.text = target.ToString();
     }
 }

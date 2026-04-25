@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ArmAim : MonoBehaviour
 {
-    
+    public bool canAim = true; //define si el jugador puede apuntar o no
     private SpriteRenderer sr; //Componente SpriteRenderer
     [SerializeField] private SpriteRenderer weaponSr; //Componente SpriteRenderer del arma;
     [SerializeField] private PlayerMovement player; //Componente SpriteRenderer del arma;
@@ -15,7 +15,7 @@ public class ArmAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
-        if(Time.timeScale == 0f)return;
+        if(Time.timeScale == 0f || !canAim)return;
         //Obtener posición del mouse en el mundo del juego
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
