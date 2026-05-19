@@ -1,14 +1,27 @@
 using System;
 using UnityEngine;
 
+public enum EnemyType { Meele, Range}
+
 public class Enemy : MonoBehaviour
 {
     public bool isActive = false; //Define si el personaje puede interactuar con el mundo y el jugador
-    
+    public EnemyType enemyType = EnemyType.Meele;
+    public bool flyingEnemy = false; //Si el enemigo es volador 
+
+
     public float totalLife = 15; //Vida todal del personaje
     public float currentLife; //Vida actual del personaje
 
+    public int attack = 1;
+    public float attackSpeed = 1f;
+    private float attackSpeedTimer = 0;
+    [SerializeField] private bool canAttack = true;
+
+    public GameObject bullet; //Bala o proyectil que lanza si es un enemigo rango
+
     public float speed = 5f; //Velocidad de movimiento
+    
     private float currentSpeed; //Velocida actual
     public float jumpForce = 12f; //Fuerza con la que salta
     private float currentJumpForce; //Fuerza actual con la que salta
@@ -51,17 +64,43 @@ public class Enemy : MonoBehaviour
         sr = gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
+        if (flyingEnemy)
+        {
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            knockbackTimer = 0.2f;
+        }
+
+        if (!target)
+        {
+            target = GameObject.Find("Player");
+        }        
     }
 
     // Update is called once per frame
     void Update()
     {
-        sr.flipX = direction == 0;
+        sr.flipX = direction <= 0;
         CheckIsGroud();
         ChaseTarget();
         CheckKnockback();
+        CanAttack();
     }
 
+    void CanAttack()
+    {
+        if (!isActive || Time.deltaTime == 0)return; 
+        
+        if(attackSpeedTimer > 0 && !canAttack){
+            attackSpeedTimer -= Time.deltaTime;
+            if(attackSpeedTimer <= 0 ) canAttack = true;
+        }
+        else
+        {   
+            if(canAttack)return;
+            attackSpeedTimer = attackSpeed;
+        }
+    }
+       
 
     void CheckIsGroud()
     {   
@@ -93,38 +132,101 @@ public class Enemy : MonoBehaviour
         Vector2 ownPosition = transform.position;//Posicion del personaje
         
 
-        direction = targetPosition.x < ownPosition.x ? 0 : 1;
+        direction = targetPosition.x < ownPosition.x ? -1 : 1;
 
-        //Ver si esta cerca del objetivo
-        float distanceX = Mathf.Abs(targetPosition.x - ownPosition.x);
-        if (distanceX <= colliderWidth) 
+        //Ataque meele
+        if (enemyType == EnemyType.Meele)
         {
-            StopMoving();
-            return;
+            float distanceX = Mathf.Abs(targetPosition.x - ownPosition.x);
+            if (distanceX <= colliderWidth) 
+            {
+                StopMoving();
+                return;
+            }
+        }
+        else if(enemyType == EnemyType.Range)
+        {
+            float targetDistance = Vector2.Distance(target.transform.position, transform.position);
+            if(targetDistance <= 8f && GetComponent<Renderer>().isVisible)
+            {
+                RangeAttack();
+                StopMoving();
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x,0);
+                return;
+            }
+        }
+        
+        
+        if(flyingEnemy)
+        {
+            FlyingEnemyMovement(targetPosition,direction);
+        }
+        else
+        {
+            TerrestialEnemyMovement(direction);
         }
 
-        //Si está en el aire, que siga moviéndose y sale.
+        
+    }
+
+private void FlyingEnemyMovement(Vector2 targetPosition, int direction)
+{   
+    float margin = 0.2f; 
+    
+    
+    float diffX = targetPosition.x - transform.position.x;
+    Vector2 horizontalDir = direction == 1 ? Vector2.right : Vector2.left;
+
+    if (Mathf.Abs(diffX) > margin && !IsObjectAhead(horizontalDir, groundLayer, VerticalOffset.Center, 1f))
+    {
+        MoveHorizontal(direction);
+    }
+    else
+    {
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); 
+    }
+
+    float diffY = targetPosition.y - transform.position.y;
+    Vector2 verticalDir = diffY > 0 ? Vector2.up : Vector2.down;
+
+    // Solo se mueve si la distancia vertical es mayor al margen
+    if (Mathf.Abs(diffY) > margin && !IsObjectAhead(verticalDir, groundLayer, VerticalOffset.Center, 1f))
+    {
+        MoveVertical(verticalDir);
+    }
+    else
+    {
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); 
+    }
+}
+
+
+
+    private void TerrestialEnemyMovement(int direction)
+    {
+        //Si esta en el aire, que siga moviéndose y sale.
         if (!isGrounded)
         {
-            Move(direction);
+            MoveHorizontal(direction);
             return;
         }
 
+        Vector2 horizontalDir = direction == 1 ? Vector2.right : Vector2.left;
         //Si detecta que DEBE saltar, salta y se mueve.
-        bool mustJump = (isObjectAhead(direction,groundLayer,"top") && IsTargetAvobe()) || 
+        bool mustJump = (IsObjectAhead(horizontalDir,groundLayer,VerticalOffset.Top) && IsTargetAvobe()) || 
                         (!isGroundAhead(direction) && ThereIsGroundIfJump());
 
         if (mustJump)
         {
             Jump();
-            Move(direction);
+            MoveHorizontal(direction);
             return;
         }
 
         //Caminar solo si hay camino adelante y si no hay otro enemigo para que no se acoplen a lo maldito
-        if (isGroundAhead(direction) && !isObjectAhead(direction,enemyLayer,"center",0.2f))
+        if (isGroundAhead(direction) && !IsObjectAhead(horizontalDir,enemyLayer,VerticalOffset.Center,0.2f))
         {
-            Move(direction);
+            MoveHorizontal(direction);
         }
         else
         {
@@ -138,11 +240,19 @@ public class Enemy : MonoBehaviour
         anim.SetBool("isMoving", false);
     }
 
-    private void Move(int direction)
+    private void MoveHorizontal(int direction)
     {
         if (isKnockback)return;
         float moveDirection = direction == 1 ? 1.0f : -1.0f;
         rb.linearVelocity = new Vector2(moveDirection * speed, rb.linearVelocity.y); //Añadir velocidad en el eje x
+        anim.SetBool("isMoving",true);
+    }
+
+    private void MoveVertical(Vector2 direction)
+    {
+        if (isKnockback)return;
+        float moveDirection = direction == Vector2.down ? -1f : 1f;
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, moveDirection * speed); //Añadir velocidad en el eje y
         anim.SetBool("isMoving",true);
     }
 
@@ -156,6 +266,51 @@ public class Enemy : MonoBehaviour
         }        
     }
 
+    public void MeeleAttack()
+    {
+        
+    }
+
+    public void RangeAttack()
+    {
+        if(!isActive && target == null) return;
+
+        float targetDistance = Vector2.Distance(target.transform.position, transform.position);
+
+        if(CanSeeTarget() && canAttack){
+            if(!bullet)return;
+
+            GameObject  instantiatedBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+
+            Vector2 direccion = (target.transform.position - transform.position).normalized;
+
+            //Aplicar la velocidad
+            instantiatedBullet.GetComponent<Rigidbody2D>().linearVelocity = direccion * 8f;
+            //ScenesManager.instance.PlaySound(sound);
+
+            canAttack = false;
+            attackSpeedTimer = attackSpeed;
+        }
+    }
+
+
+    private bool CanSeeTarget()
+    {
+        Vector2 origen = transform.position;
+        Vector2 direccion = (Vector2)target.transform.position - origen;
+        float distancia = direccion.magnitude;
+
+        // Usamos Raycast2D
+        RaycastHit2D hit = Physics2D.Raycast(origen, direccion, distancia, groundLayer);
+
+        if (hit.collider == null)
+        {
+            Debug.DrawRay(transform.position, direccion, Color.green);
+            return true;
+        }
+        Debug.DrawRay(transform.position, direccion, Color.red);
+        return false;
+    }
 
 
     private bool isGroundAhead(int direction)
@@ -177,47 +332,41 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private bool isObjectAhead(int direction, LayerMask layer, string verticalPosition = "center",float distance = 2f)
-    {
-        float colliderHeigth = bc.size.y; //Altura del collider del personaje
-        float colliderWidth = bc.size.x; //Ancho del collider del personaje
+    public enum VerticalOffset { Center, Top, Bottom }
 
-        float positionY = transform.position.y;
-        switch (verticalPosition)
+    private bool IsObjectAhead(Vector2 direction, LayerMask layer, VerticalOffset vPos = VerticalOffset.Center, float distance = 2f)
+    {
+        // 1. Calculamos el offset perpendicular a la dirección para "Top" y "Bottom"
+        // Si vas horizontal (X), el offset es en Y. Si vas vertical (Y), el offset es en X.
+        float offsetX = 0;
+        float offsetY = 0;
+
+        if (vPos != VerticalOffset.Center)
         {
-            case "center":
-                positionY = transform.position.y;
-                break;
-            case "top":
-                positionY = transform.position.y + colliderHeigth/2;
-                break;
-            case "bottom":
-                positionY = transform.position.y - colliderHeigth/2;
-                break;
-            default:
-                positionY = transform.position.y;
-                break;
+            float factor = (vPos == VerticalOffset.Top) ? 0.5f : -0.5f;
+            
+            if (Mathf.Abs(direction.x) > 0) // Movimiento horizontal
+                offsetY = bc.size.y * factor;
+            else // Movimiento vertical
+                offsetX = bc.size.x * factor;
         }
 
-        Vector2 checkOrigen = direction == 1 ? 
-                                    new Vector2(transform.position.x + colliderWidth/2, positionY):
-                                    new Vector2(transform.position.x - colliderWidth/2, positionY);
+        // 2. Ajustamos el origen al borde del collider según la dirección
+        // Multiplicamos el tamaño del collider por la dirección para que el rayo salga del borde exacto
+        Vector2 origin = new Vector2(
+            transform.position.x + (direction.x * bc.size.x / 2) + offsetX,
+            transform.position.y + (direction.y * bc.size.y / 2) + offsetY
+        );
 
-        Vector2 checkDirection = direction == 1 ?  Vector2.right : Vector2.left;
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, distance, layer);
 
-
-        RaycastHit2D hit = Physics2D.Raycast(
-                            checkOrigen, 
-                            checkDirection, 
-                            distance
-                            ,layer);
-
-        Color debugColor = hit.collider != null ? Color.green : Color.red;
-        Debug.DrawRay(checkOrigen, checkDirection * distance, debugColor);
+        // Debug visual para las 4 direcciones
+        Debug.DrawRay(origin, direction * distance, hit ? Color.green : Color.red);
 
         return hit.collider != null;
     }
 
+    //Verificar si el objetivo esta arriba
     private bool IsTargetAvobe()
     {   
         if(!target) return false;
@@ -230,6 +379,7 @@ public class Enemy : MonoBehaviour
         return targetPosY > currentPosY + colliderHeigth;
     }
 
+    //Verificar si el objetivo esta abajo
     private bool IsTargetBelow()
     {   
         if(!target) return false;
@@ -270,7 +420,7 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && canAttack && enemyType == EnemyType.Meele)
         {
             
             float dir = Mathf.Sign(other.transform.position.x - transform.position.x);
@@ -278,6 +428,23 @@ public class Enemy : MonoBehaviour
             Vector2 knockback = new Vector2(dir * 3f, 3f);
 
             other.GetComponent<Health>().TakeDamage(1, knockback * 2);
+            canAttack = false;
+            attackSpeedTimer = attackSpeed;
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if(other.CompareTag("Player") && canAttack && enemyType == EnemyType.Meele)
+        {
+            
+            float dir = Mathf.Sign(other.transform.position.x - transform.position.x);
+
+            Vector2 knockback = new Vector2(dir * 3f, 3f);
+
+            other.GetComponent<Health>().TakeDamage(1, knockback * 2);
+            canAttack = false;
+            attackSpeedTimer = attackSpeed;
         }
     }
 
@@ -320,6 +487,8 @@ public class Enemy : MonoBehaviour
     }
 
     void OnBecameVisible() {
+        //Solo activar con cámara del juego
+        if (Camera.current != null && Camera.current.name == "SceneCamera")return;
         isActive = true;
     }
 }
