@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 7072227349149422726}
   - component: {fileID: 5281620392873787245}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: EnemyBase
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,8 +120,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
+  enemyType: 0
+  flyingEnemy: 0
   totalLife: 15
   currentLife: 0
+  attack: 1
+  attackSpeed: 1
+  canAttack: 1
+  bullet: {fileID: 0}
   speed: 4
   jumpForce: 15
   jumpDelayCounter: 0
