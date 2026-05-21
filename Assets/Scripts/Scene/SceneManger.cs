@@ -12,10 +12,16 @@ public class ScenesManager : MonoBehaviour
     private GameObject musicPlayer;
     private ScreenFader screenFader;
 
+    public LevelData levelData; //datos del nivel
+
     void Start()
-    {
-        if(!musicScene)return;
-        PlayMusic(musicScene);
+    {      
+        GameObject leveldataObject = GameObject.Find("LevelData");
+        if(!leveldataObject)return;
+        levelData = leveldataObject.GetComponent<LevelData>();
+        
+        if(!levelData.musicScene)return;
+        PlayMusic(levelData.musicScene);
     }
 
     void Awake()
@@ -69,12 +75,27 @@ public class ScenesManager : MonoBehaviour
         while (!asyncLoad.isDone)
             yield return null;
 
+        AudioClip newSceneMusic = GetSceneMusic();
+
         // Fade de negro a visible
-        PlayMusic(musicScene);
+        if (newSceneMusic != null)
+        {
+            PlayMusic(newSceneMusic);            
+        }
         yield return screenFader.FadeCoroutine(1f, 0f);
         if (screenFader != null)
         {
             Destroy(screenFader.gameObject);
         }
+    }
+
+    private AudioClip GetSceneMusic()
+    {
+        GameObject leveldataObject = GameObject.Find("LevelData");
+        if(!leveldataObject) return null;
+        levelData = leveldataObject.GetComponent<LevelData>();
+        
+        if(!levelData.musicScene) return null;
+        return levelData.musicScene;
     }
 }

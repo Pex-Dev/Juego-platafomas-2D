@@ -9,6 +9,7 @@ TagManager:
   - Coin
   - BreakableBox
   - PlayerBullet
+  - SceneManager
   layers:
   - Default
   - TransparentFX
