@@ -209,7 +209,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1876107963}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: ResetEscene
+        m_MethodName: ResetScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1881,7 +1881,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1876107963}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: ResetEscene
+        m_MethodName: ResetScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2734,7 +2734,7 @@ MonoBehaviour:
   m_text: Continuar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca44d92942751c340b191da10cbafa8a, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 8496995125637926441, guid: ca44d92942751c340b191da10cbafa8a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2800,7 +2800,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &433972131
@@ -3113,6 +3113,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463084824}
   m_CullTransparentMesh: 1
+--- !u!1001 &469427026
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 705809226601111707, guid: 34889cecb3d95f44193d8794650f30a5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 99.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 705809226601111707, guid: 34889cecb3d95f44193d8794650f30a5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 705809226601111707, guid: 34889cecb3d95f44193d8794650f30a5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705809226601111707, guid: 34889cecb3d95f44193d8794650f30a5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 705809226601111707, guid: 34889cecb3d95f44193d8794650f30a5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705809226601111707, guid: 34889cecb3d95f44193d8794650f30a5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705809226601111707, guid: 34889cecb3d95f44193d8794650f30a5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705809226601111707, guid: 34889cecb3d95f44193d8794650f30a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705809226601111707, guid: 34889cecb3d95f44193d8794650f30a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705809226601111707, guid: 34889cecb3d95f44193d8794650f30a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569588757589501861, guid: 34889cecb3d95f44193d8794650f30a5, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 34889cecb3d95f44193d8794650f30a5, type: 3}
 --- !u!1001 &484896394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12239,7 +12296,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1876107963}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: ResetEscene
+        m_MethodName: NextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12962,7 +13019,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1343896001}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1876107963}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: SelectorNiveles
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1343896001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14167,7 +14236,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1639605553}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1876107963}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: SelectorNiveles
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1639605553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162662,6 +162743,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9210424086396454361, guid: 15eb4437e253e4f49892ca85ce84b218, type: 3}
+      propertyPath: nextLevelName
+      value: Nivel 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210424086396454361, guid: 15eb4437e253e4f49892ca85ce84b218, type: 3}
+      propertyPath: nextLevelNumber
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -162802,3 +162891,4 @@ SceneRoots:
   - {fileID: 1634205986}
   - {fileID: 233369645}
   - {fileID: 3984877473499730000}
+  - {fileID: 469427026}

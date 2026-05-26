@@ -39,4 +39,14 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.Save();
         }
     }
+
+    public int MonedasActualizado()
+    {
+        return PlayerPrefs.GetInt("Monedas", 0);
+    }
+
+    public int NivelesActualizado()
+    {
+        return PlayerPrefs.GetInt("NivelDesbloqueado",0);
+    }
 }
