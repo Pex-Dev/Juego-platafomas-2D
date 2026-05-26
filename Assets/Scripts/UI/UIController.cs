@@ -34,6 +34,7 @@ public class UIController : MonoBehaviour
         coinCounter.AddCoins(nCoins);
     }
 
+
     public void SetLife(int life)
     {
         lifeController.UpdateLifeBar(life);
@@ -97,9 +98,31 @@ public class UIController : MonoBehaviour
         }
     }
 
-    public void ResetEscene()
+    public void ResetScene()
     {
         Time.timeScale = 1f;
         ScenesManager.instance.ChangeScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void NextScene()
+    {
+        GameObject leveldataObject = GameObject.Find("LevelData");
+        if (leveldataObject!= null)
+        {
+            LevelData levelData = leveldataObject.GetComponent<LevelData>();
+            if (ScenesManager.instance.DoesSceneExist(levelData.nextLevelName))
+            {                
+                GameManager.Instance.DesbloquearNivel(levelData.nextLevelNumber);
+            }
+        }
+        Time.timeScale = 1f;
+        GameManager.Instance.AgregarMonedas(coinCounter.GetCoins());       
+        ScenesManager.instance.NextLevel();
+    }
+
+    public void SelectorNiveles()
+    {
+        Time.timeScale = 1f;
+        ScenesManager.instance.ChangeScene("Selector Niveles");
     }
 }

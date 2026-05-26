@@ -67,7 +67,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.77, y: 1.38}
+  m_Size: {x: 1.44, y: 1.38}
   m_Direction: 0
 --- !u!1 &7889604867464320298
 GameObject:
@@ -181,7 +181,7 @@ MonoBehaviour:
   isActive: 0
   enemyType: 0
   flyingEnemy: 1
-  totalLife: 15
+  totalLife: 10
   currentLife: 0
   attack: 1
   attackSpeed: 1
@@ -202,12 +202,9 @@ MonoBehaviour:
     m_Bits: 256
   isKnockback: 0
   hurtSounds:
-  - {fileID: 8300000, guid: f6db6556bbd43c241b0dc2b2cde057ef, type: 3}
-  - {fileID: 8300000, guid: db99b2897b2971347a03a7b45985b329, type: 3}
-  - {fileID: 8300000, guid: 59bd90d99e1bd1e4ba6d5b916592b9ee, type: 3}
-  - {fileID: 8300000, guid: c204298a803cb4b4381e6e114c951dd6, type: 3}
-  - {fileID: 8300000, guid: a1441754414bef149b4efec5253ab909, type: 3}
-  deathSound: {fileID: 8300000, guid: ab843af728e36314db0641774e18e2be, type: 3}
+  - {fileID: 8300000, guid: 1e0598ec4ee708547af46da848fe7d7b, type: 3}
+  - {fileID: 8300000, guid: 172bc944c6094cb4f913969f45f219b8, type: 3}
+  deathSound: {fileID: 8300000, guid: 62756ad72a1f60e4e903c6697c4f933c, type: 3}
 --- !u!114 &-5982078528547928745
 MonoBehaviour:
   m_ObjectHideFlags: 0

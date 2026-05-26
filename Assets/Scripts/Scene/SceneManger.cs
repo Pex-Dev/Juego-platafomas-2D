@@ -34,7 +34,13 @@ public class ScenesManager : MonoBehaviour
 
     public void ChangeScene(string sceneName)
     {
-        StartCoroutine(FadeAndChangeScene(sceneName));
+        if(DoesSceneExist(sceneName)){
+            StartCoroutine(FadeAndChangeScene(sceneName));
+        }
+        else
+        {
+            StartCoroutine(FadeAndChangeScene(SceneManager.GetActiveScene().name));
+        }
     }
 
     public void PlaySound(AudioClip sound)
@@ -97,5 +103,25 @@ public class ScenesManager : MonoBehaviour
         
         if(!levelData.musicScene) return null;
         return levelData.musicScene;
+    }
+
+    public void NextLevel()
+    {        
+        ChangeScene(levelData.nextLevelName);
+    }
+
+    public bool DoesSceneExist(string sceneName)
+    {
+        for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
+        {
+            string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
+            string sceneNameInBuild = System.IO.Path.GetFileNameWithoutExtension(scenePath);
+
+            if (sceneNameInBuild.Equals(sceneName, System.StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

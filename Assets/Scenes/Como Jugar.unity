@@ -203,7 +203,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.15
+  m_fontSize: 30.15
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Usa WASD para mover al personaje y salta con espacio
+  m_text: Usa WASD para mover al personaje y espacio para saltar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca44d92942751c340b191da10cbafa8a, type: 2}
   m_sharedMaterial: {fileID: 8496995125637926441, guid: ca44d92942751c340b191da10cbafa8a, type: 2}
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.3
+  m_fontSize: 29.65
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -882,7 +882,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.7
+  m_fontSize: 29.35
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Usa el mouse para apuntar y ataca con click izquierdo
+  m_text: Usa el mouse para apuntar y click izquierdo para atacar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca44d92942751c340b191da10cbafa8a, type: 2}
   m_sharedMaterial: {fileID: 8496995125637926441, guid: ca44d92942751c340b191da10cbafa8a, type: 2}
@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.75
+  m_fontSize: 29.9
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1583,7 +1583,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.25
+  m_fontSize: 54.4
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1

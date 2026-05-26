@@ -7,13 +7,27 @@ public class CoinCounter : MonoBehaviour
     public TextMeshProUGUI coinText;
     private int currentCoins = 0;
 
+    void Start()
+    {
+        AddCoins(GameManager.Instance.MonedasActualizado(),false);
+    }
+
     public void AddCoins(int amount, bool animate = true)
     {
         int targetCoins = currentCoins + amount;
-        StopAllCoroutines(); // Evitar que se acumulen varios cambios
+        StopAllCoroutines();
         if (animate && coinText.gameObject.activeInHierarchy)
-            StartCoroutine(AnimateCoins(targetCoins, 0.5f)); // 0.5 segundos de animación
+            StartCoroutine(AnimateCoins(targetCoins, 0.5f)); 
         currentCoins = targetCoins;
+        if (!animate)
+        {
+            coinText.text = currentCoins.ToString();;
+        }
+    }
+
+    public int GetCoins()
+    {
+        return currentCoins;
     }
 
     private IEnumerator AnimateCoins(int target, float duration)
