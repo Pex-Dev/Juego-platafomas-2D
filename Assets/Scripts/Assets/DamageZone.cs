@@ -24,7 +24,7 @@ public class DamageZone : MonoBehaviour
 
             Vector2 knockback = new Vector2(dir * 3f, 3f);
 
-            other.GetComponent<Health>()?.TakeDamage(damage, knockback * 2);
+            other.GetComponent<Health>()?.TakeDamage(damage, knockback * 2,true);
         }
         if(other.CompareTag("Enemy"))
         {
