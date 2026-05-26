@@ -38,10 +38,13 @@ public class Health : MonoBehaviour
         invulnerability = false;
     }
 
-    public void TakeDamage(int damage, Vector2 knockback)
-    {   
+    public void TakeDamage(int damage, Vector2 knockback, bool ignoreInvulneravility = false)
+    {
         //Si el jugador esta en su tiempo de invulneravilidad no recibe daño
-        if(invulnerability)return;
+        if (!ignoreInvulneravility)
+        {            
+            if(invulnerability)return;
+        }
         invulnerability = true;
         
         StartCoroutine(StartInvulneraviltyTime());
