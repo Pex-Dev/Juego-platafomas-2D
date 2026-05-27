@@ -15350,6 +15350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Halth
   life: 6
+  maxLife: 0
   pm: {fileID: 1873354623}
   dieAnimation: {fileID: 1873354626}
   invulnerability: 0
@@ -15357,6 +15358,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bc0a8e4783fabaf49ac4c61da951484c, type: 3}
   - {fileID: 8300000, guid: 0985baf530e21734a9e8a8383e92f0be, type: 3}
   deathSound: {fileID: 8300000, guid: bd66924d254ea0946858d9b17c65a690, type: 3}
+  healSound: {fileID: 8300000, guid: 203acb9f388293c48bdd268fb8966b9d, type: 3}
 --- !u!114 &1873354628
 MonoBehaviour:
   m_ObjectHideFlags: 0
