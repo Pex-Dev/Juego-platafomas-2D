@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
 
     [SerializeField] private AudioClip[] hurtSound;
     [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip healSound;
 
     void Start()
     {        
@@ -71,6 +72,14 @@ public class Health : MonoBehaviour
             uIController.SetLife(0);
             uIController.ShowDeathScreen(true);
         }        
+    }
+
+    public void Heal(int value)
+    {
+        life += value;
+        if(life >= maxLife) life = maxLife;
+        ScenesManager.instance.PlaySound(healSound);
+        uIController.SetLife(life);
     }
 
     private void AllSpriteRenderers(Color color)
