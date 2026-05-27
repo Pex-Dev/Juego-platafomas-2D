@@ -8,6 +8,10 @@ public class BreakableBox : MonoBehaviour
     [SerializeField] private DieAnimation dieAnimation;
     [SerializeField] private AudioClip breakSound; //Sonido que se reproduce al romper
 
+    private Health playerHealth;
+
+    [SerializeField] private GameObject corazonVida;
+
     [System.Serializable]
     public class DropConfig
     {
@@ -21,7 +25,7 @@ public class BreakableBox : MonoBehaviour
 
     void Start()
     {
-        
+        playerHealth = GameObject.Find("Player")?.GetComponent<Health>();
     }
 
     public void TakeDamage(int damage)
@@ -34,6 +38,15 @@ public class BreakableBox : MonoBehaviour
             if(breakSound!=null) ScenesManager.instance.PlaySound(breakSound);
 
             DropItems();
+
+            if (playerHealth != null)
+            {
+                if(Random.Range(0,100)<=30 && playerHealth.life < playerHealth.maxLife)
+                {
+                    Instantiate(corazonVida, transform.position, Quaternion.identity);
+                }
+            }
+
             Destroy(gameObject);
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int life = 5;//Vida del personaje
-    private int maxLife;
+    public  int maxLife;
 
     [SerializeField] private PlayerMovement pm;
     [SerializeField] private DieAnimation dieAnimation; //Script de animación de muerte
