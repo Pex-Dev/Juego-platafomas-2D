@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 2349541139553643831}
   - component: {fileID: 6154087189153084580}
   - component: {fileID: 2547799737973071957}
+  - component: {fileID: 6486058726086603404}
   m_Layer: 12
   m_Name: CorazonVida
   m_TagString: Coin
@@ -256,7 +257,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -271,3 +272,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &6486058726086603404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148442361260119220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf67fcc997ab1f4babe84fcb0c96adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  coinSounds: []
