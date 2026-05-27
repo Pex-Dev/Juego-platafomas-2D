@@ -1875,11 +1875,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1004196609552294021, guid: 468cd6b233b7ce64384d482273cd231c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 163.1
+      value: 163.28
       objectReference: {fileID: 0}
     - target: {fileID: 1004196609552294021, guid: 468cd6b233b7ce64384d482273cd231c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.34
+      value: 4.93
       objectReference: {fileID: 0}
     - target: {fileID: 1004196609552294021, guid: 468cd6b233b7ce64384d482273cd231c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8814,7 +8814,6 @@ Transform:
   - {fileID: 390479497}
   - {fileID: 609595614}
   - {fileID: 1590595553}
-  - {fileID: 1616850113}
   - {fileID: 818321405}
   - {fileID: 1725293384}
   - {fileID: 26235076}
@@ -8931,7 +8930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.033, y: 0.075}
   m_AnchorMax: {x: 0.259734, y: 0.94688034}
-  m_AnchoredPosition: {x: -0.2999878, y: -0.50001717}
+  m_AnchoredPosition: {x: -0.2999878, y: -0.50001526}
   m_SizeDelta: {x: -0.45999908, y: -0.20999908}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &796524758
@@ -11107,63 +11106,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1001 &1239921712
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 785826726}
-    m_Modifications:
-    - target: {fileID: 4294250302949771540, guid: 1ac3cf96f8763c548bccd831f2f03e41, type: 3}
-      propertyPath: m_Name
-      value: Jarron
-      objectReference: {fileID: 0}
-    - target: {fileID: 6031508010324926000, guid: 1ac3cf96f8763c548bccd831f2f03e41, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 163.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 6031508010324926000, guid: 1ac3cf96f8763c548bccd831f2f03e41, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 6031508010324926000, guid: 1ac3cf96f8763c548bccd831f2f03e41, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6031508010324926000, guid: 1ac3cf96f8763c548bccd831f2f03e41, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6031508010324926000, guid: 1ac3cf96f8763c548bccd831f2f03e41, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6031508010324926000, guid: 1ac3cf96f8763c548bccd831f2f03e41, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6031508010324926000, guid: 1ac3cf96f8763c548bccd831f2f03e41, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6031508010324926000, guid: 1ac3cf96f8763c548bccd831f2f03e41, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6031508010324926000, guid: 1ac3cf96f8763c548bccd831f2f03e41, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6031508010324926000, guid: 1ac3cf96f8763c548bccd831f2f03e41, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1ac3cf96f8763c548bccd831f2f03e41, type: 3}
 --- !u!4 &1246204152 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2425817924711789501, guid: e10c1b02600228c4db4e2b4addc36ce7, type: 3}
@@ -12432,11 +12374,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7891344512586237710, guid: ff02a1bbcf1e70145805469008c1833b, type: 3}
   m_PrefabInstance: {fileID: 1174289749}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1616850113 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6031508010324926000, guid: 1ac3cf96f8763c548bccd831f2f03e41, type: 3}
-  m_PrefabInstance: {fileID: 1239921712}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1617384993
 PrefabInstance:
@@ -13967,6 +13904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Halth
   life: 6
+  maxLife: 0
   pm: {fileID: 1873354623}
   dieAnimation: {fileID: 1873354626}
   invulnerability: 0
@@ -13974,6 +13912,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bc0a8e4783fabaf49ac4c61da951484c, type: 3}
   - {fileID: 8300000, guid: 0985baf530e21734a9e8a8383e92f0be, type: 3}
   deathSound: {fileID: 8300000, guid: bd66924d254ea0946858d9b17c65a690, type: 3}
+  healSound: {fileID: 8300000, guid: 203acb9f388293c48bdd268fb8966b9d, type: 3}
 --- !u!114 &1873354628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123810,7 +123749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -8.439972, y: 131.75}
+  m_AnchoredPosition: {x: -8.439941, y: 131.75}
   m_SizeDelta: {x: 202.36, y: 263.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2048953412
