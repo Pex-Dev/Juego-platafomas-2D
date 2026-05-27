@@ -74,12 +74,14 @@ public class Health : MonoBehaviour
         }        
     }
 
-    public void Heal(int value)
+    public bool Heal(int value)
     {
-        life += value;
-        if(life >= maxLife) life = maxLife;
+        if(life >= maxLife) return false;
         ScenesManager.instance.PlaySound(healSound);
+        life += value;
+        if(life >= maxLife) life = maxLife;        
         uIController.SetLife(life);
+        return true;
     }
 
     private void AllSpriteRenderers(Color color)
