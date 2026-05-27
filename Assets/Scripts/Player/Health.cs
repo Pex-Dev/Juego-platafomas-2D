@@ -4,7 +4,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int life = 5;//Vida del personaje
-    private int maxLife;
+    public  int maxLife;
 
     [SerializeField] private PlayerMovement pm;
     [SerializeField] private DieAnimation dieAnimation; //Script de animación de muerte
@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
 
     [SerializeField] private AudioClip[] hurtSound;
     [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip healSound;
 
     void Start()
     {        
@@ -71,6 +72,16 @@ public class Health : MonoBehaviour
             uIController.SetLife(0);
             uIController.ShowDeathScreen(true);
         }        
+    }
+
+    public bool Heal(int value)
+    {
+        if(life >= maxLife) return false;
+        ScenesManager.instance.PlaySound(healSound);
+        life += value;
+        if(life >= maxLife) life = maxLife;        
+        uIController.SetLife(life);
+        return true;
     }
 
     private void AllSpriteRenderers(Color color)
